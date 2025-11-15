@@ -5,9 +5,13 @@ function manageMeetings(listOfMeetings) {
     if (weeklyMeetings[meetingInfo[0]]) {
       console.log(`Conflict on ${meetingInfo[0]}!`)
     } else {
+      console.log(`Scheduled for ${meetingInfo[0]}`)
       weeklyMeetings[meetingInfo[0]] = meetingInfo[1]
     }
   } 
+  for ([day, person] of Object.entries(weeklyMeetings)) {
+    console.log(`${day} -> ${person}`)
+  }
 }
 
 manageMeetings(['Friday Bob',
